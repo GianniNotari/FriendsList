@@ -10,18 +10,17 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        screenOptions={(route) => {
-          return {
-            tabBarIcon: ({ focused, size, color }) => {
-              let icon;
-              if (route.name === "Home")
-                icon = focused ? "home" : "home-outline";
-              else if (route.name === "Settings")
-                icon = focused ? "settings" : "settings-outline";
-              return <Icon.Ionicons name={icon} size={size} color={color} />;
-            },
-          };
-        }}
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, size, color }) => {
+            let icon;
+            if (route.name === "Home") {
+              icon = focused ? "home" : "home-outline";
+            } else if (route.name === "Settings") {
+              icon = focused ? "settings" : "settings-outline";
+            }
+            return <Icon.Ionicons name={icon} size={size} color={color} />;
+          },
+        })}
       >
         <Tab.Screen
           name="Home"
