@@ -13,7 +13,7 @@ function HomeStack() {
   return (
       <Stack.Navigator>
         <Stack.Screen name='HomeScreen' component={HomeScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Friend' component={FriendScreen}/>
+        <Stack.Screen name='Friend' component={FriendScreen} options={({route}) => { return {title: route.params.name}}}/>
       </Stack.Navigator>
   )
 }
