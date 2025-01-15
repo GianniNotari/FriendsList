@@ -11,11 +11,25 @@ const Tab = createBottomTabNavigator();
 
 function HomeStack() {
   return (
-      <Stack.Navigator>
-        <Stack.Screen name='HomeScreen' component={HomeScreen} options={{headerShown: false}}/>
-        <Stack.Screen name='Friend' component={FriendScreen} options={({route}) => { return {title: route.params.name}}}/>
-      </Stack.Navigator>
-  )
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: "aliceblue" },
+      }}
+    >
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Friend"
+        component={FriendScreen}
+        options={({ route }) => {
+          return { title: route.params.name };
+        }}
+      />
+    </Stack.Navigator>
+  );
 }
 
 export default function Navigation() {
@@ -32,8 +46,8 @@ export default function Navigation() {
             }
             return <Icon.Ionicons name={icon} size={size} color={color} />;
           },
-          tabBarActiveTintColor: '#2ad',
-          tabBarStyle: {backgroundColor: 'aliceblue'},
+          tabBarActiveTintColor: "#2ad",
+          tabBarStyle: { backgroundColor: "aliceblue" },
           headerShown: false,
         })}
       >
