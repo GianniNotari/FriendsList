@@ -6,19 +6,34 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <FlatList
         data={[
-          { name: "Alice" },
-          { name: "Bob" },
-          { name: "Jane" },
-          { name: "Joe" },
+          {
+            first: "Alice",
+            last: "Smith",
+            email: "test1@example.com",
+          },
+          {
+            first: "Bob",
+            last: "Smith",
+            email: "test2@example.com",
+          },
+          {
+            first: "Jane",
+            last: "Smith",
+            email: "test3@example.com",
+          },
+          {
+            first: "Joe",
+            last: "Smith",
+            email: "test4@example.com",
+          },
         ]}
         renderItem={({ item }) => (
-            <FriendListItem
-              friend={item}
-              onPress={() => navigation.navigate("Friend", { name: item.name })}
-            />
-          )
-        }
-        keyExtractor={(item) => item.name}
+          <FriendListItem
+            friend={item}
+            onPress={() => navigation.navigate("Friend", { name: item })}
+          />
+        )}
+        keyExtractor={(item) => item.email}
         ItemSeparatorComponent={<View style={styles.listSeparator} />}
       />
     </View>
@@ -33,7 +48,7 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   listSeparator: {
-    height: StyleSheet.hairlineWidth, 
-    backgroundColor: 'grey'
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: "grey",
   },
 });
