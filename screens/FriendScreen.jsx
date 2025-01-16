@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, StyleSheet, Text, View } from "react-native";
 
 export default function FriendScreen({navigation, route}) {
   const { name } = route.params;
