@@ -30,7 +30,7 @@ export default function HomeScreen({ navigation }) {
         renderItem={({ item }) => (
           <FriendListItem
             friend={item}
-            onPress={() => navigation.navigate("Friend", { name: item })}
+            onPress={() => navigation.navigate("Friend", { friend: item })}
           />
         )}
         keyExtractor={(item) => item.email}
